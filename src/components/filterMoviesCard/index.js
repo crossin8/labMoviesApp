@@ -18,6 +18,7 @@ const formControl =
     backgroundColor: "rgb(255, 255, 255)"
   };
 
+
 export default function FilterMoviesCard(props) {
 
   const genres = [
@@ -74,5 +75,10 @@ export default function FilterMoviesCard(props) {
         </Typography>
       </CardContent>
     </Card>
+    
   );
+  const handleChange = (e, type, value) => {
+      e.preventDefault()
+      props.onUserInput(type, value)   // NEW
+    }
 }
