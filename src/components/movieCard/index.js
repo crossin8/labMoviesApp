@@ -22,11 +22,12 @@ export default function MovieCard(props) {
     e.preventDefault();
     props.selectFavourite(movie.id);
   };
+
   
 
   return (
     <Card sx={{ maxWidth: 345 }}>
-      <CardHeader
+        <CardHeader
         avatar={
           movie.favourite ? (
             <Avatar sx={{ backgroundColor: 'red' }}>
@@ -72,7 +73,7 @@ export default function MovieCard(props) {
       <CardActions disableSpacing>
       <IconButton aria-label="add to favourites" onClick={handleAddToFavourite}>
         <FavoriteIcon color="primary" fontSize="large" />
-      </IconButton>
+    </IconButton>
         <Button variant="outlined" size="medium" color="primary">
           More Info ...
         </Button>
