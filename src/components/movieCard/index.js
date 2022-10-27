@@ -73,7 +73,7 @@ export default function MovieCard(props) {
       <CardActions disableSpacing>
       <IconButton aria-label="add to favourites" onClick={handleAddToFavourite}>
         <FavoriteIcon color="primary" fontSize="large" />
-    </IconButton>
+      </IconButton>
         <Button variant="outlined" size="medium" color="primary">
           More Info ...
         </Button>

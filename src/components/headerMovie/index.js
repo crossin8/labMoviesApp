@@ -8,12 +8,16 @@ import HomeIcon from "@mui/icons-material/Home";
 import Avatar from "@mui/material/Avatar";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavouriteMoviesPage from "../../pages/favouriteMoviesPage";
+//import handleAddToFavourite from "../movieCard";
 
 const MovieHeader = (props) => {
   const movie = props.movie;
   const favouriteMovies = JSON.parse(localStorage.getItem("favourites")); 
 
-  
+const like = FavouriteMoviesPage();
+if (like != null) {
+  FavoriteIcon = true; 
+}
 
   return (
     <Paper 
@@ -26,9 +30,11 @@ const MovieHeader = (props) => {
             margin: 0,
         }}
       >
+       
+        
         <IconButton aria-label="go back">
-        <ArrowBackIcon color="primary" fontSize="large" />
-      </IconButton>
+          <ArrowBackIcon color="primary" fontSize="large" />
+        </IconButton>
 
       <Typography variant="h4" component="h3">
         {movie.title}
@@ -41,6 +47,13 @@ const MovieHeader = (props) => {
       <IconButton aria-label="go forward">
         <ArrowForwardIcon color="primary" fontSize="large" />
       </IconButton>
+      
+      <IconButton aria-label="add to favourites">
+        <FavoriteIcon color="primary" fontSize="large" />
+      </IconButton>
+
+      
+
     </Paper>
   );
 };
