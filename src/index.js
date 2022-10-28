@@ -7,7 +7,7 @@ import FavouriteMoviesPage from "./pages/favouriteMoviesPage"; // NEW
 import {Link} from 'react-router-dom'
 import MovieReviewPage from "./pages/movieReviewPage";
 import SiteHeader from './components/siteHeader';
-import upcomingMovie from '../src/pages/upcomingMoviePage';
+import upcomingMoviePage from '../src/pages/upcomingMoviePage';
 
 const App = () => {
   return (
