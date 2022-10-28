@@ -8,7 +8,7 @@ import NavigationIcon from "@mui/icons-material/Navigation";
 import Fab from "@mui/material/Fab";
 import Typography from "@mui/material/Typography";
 import Drawer from "@mui/material/Drawer";
-import MovieReviews from "../movieReviews"
+import MovieReviews from "../movieReviews";
 
 const root = {
     display: "flex",
@@ -20,13 +20,8 @@ const root = {
 };
 const chip = { margin: 0.5 };
 
-
-const MovieDetails = ( props) => {
-  const movie = props.movie
 const MovieDetails = ({ movie }) => {  // Don't miss this!
   const [drawerOpen, setDrawerOpen] = useState(false);
-  
-   
   return (
     <>
       <Typography variant="h5" component="h3">
@@ -78,18 +73,6 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
       <Fab
         color="secondary"
         variant="extended"
-        sx={{
-            position: "fixed",
-            bottom: 2,
-            right: 2
-        }}
-      >
-        <NavigationIcon />
-        Reviews
-      </Fab>
-      <Fab
-        color="secondary"
-        variant="extended"
         onClick={() =>setDrawerOpen(true)}
         sx={{
           position: 'fixed',
@@ -104,6 +87,6 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
         <MovieReviews movie={movie} />
       </Drawer>
       </>
-  );}
+  );
 };
 export default MovieDetails ;
