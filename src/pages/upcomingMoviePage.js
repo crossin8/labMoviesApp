@@ -6,14 +6,15 @@ import { getUpcomingMovie } from "../api/tmdb-api";
 
 
 const Upcoming = (props) => {
-  const date = new Date('28-10-2022');
   const [movies, setMovies] = useState([]);
+  const date = new Date('28-10-2022');
+  
   const newMovie = movies.filter((f) =>f.Upcoming);
   localStorage.setItem("Upcoming", JSON.stringify(newMovie));
 
   const soon = (movies) =>{
     const updateNew = movies.map((f)=>
-    date.getTime() < movies.release_date.getTime() ? {...f, newMovie: true} : f
+    date.getTime() < f.release_date.getTime() ? {...f, newMovie: true} : f
     );
     setMovies(updateNew);
   }
