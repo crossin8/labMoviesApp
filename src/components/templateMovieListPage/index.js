@@ -8,6 +8,7 @@ function MovieListPageTemplate({ movies, title, selectFavourite }) {
   const [nameFilter, setNameFilter] = useState("");
   const [genreFilter, setGenreFilter] = useState("0");
   const genreId = Number(genreFilter);
+  const moviedate = Number(genreFilter);
 
   let displayedMovies = movies
     .filter((m) => {
@@ -15,6 +16,12 @@ function MovieListPageTemplate({ movies, title, selectFavourite }) {
     })
     .filter((m) => {
       return genreId > 0 ? m.genre_ids.includes(genreId) : true;
+    })
+    .filter((f) => {
+      return f.title.toLowerCase().search(nameFilter.toLowerCase()) !== -1;
+    })
+    .filter((f) => {
+      return moviedate > 0 ? f.release_date.includes(moviedate) : true;
     });
 
   const handleChange = (type, value) => {
