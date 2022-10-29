@@ -13,6 +13,7 @@ import { getGenres } from "../../api/tmdb-api";
 import React from "react";  
 import { useQuery } from "react-query";
 import Spinner from '../Spinner';
+import MoviesContextProvider from "./contexts/moviesContext";
 
 const formControl = {
   margin: 1,
