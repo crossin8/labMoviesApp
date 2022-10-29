@@ -11,7 +11,7 @@ const Upcoming = (props) => {
   
   const newMovie = movies.filter((f) =>f.Upcoming);
   localStorage.setItem("Upcoming", JSON.stringify(newMovie));
-
+  
   const soon = (moviedate) =>{
     const updateNew = movies.map((f)=>
     date.getTime() < moviedate.getTime() ? {...f, newMovie: true} : f
